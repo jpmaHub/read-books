@@ -3,15 +3,15 @@ describe SaveBook do
     def save(book)
       @book = book
     end
-
+    
     attr_reader :book
   end
 
 
-  it 'returns empty array when no book to save' do
+  it 'returns error when no book to save' do
     save_book = SaveBook.new(book_gateway: nil)
     response = save_book.execute({})
-    expect(response).to eq(false)
+    expect(response).to eq({ successful: false, errors: :no_book_to_save })
   end
 
   it 'uses the book gateway to save the book' do

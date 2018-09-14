@@ -4,7 +4,7 @@ class SaveBook
   end
 
   def execute(book)
-    return false if book == {}
+    return { successful: false, errors: :no_book_to_save } if book == {}
     @book_gateway.save(book)
   end
 end

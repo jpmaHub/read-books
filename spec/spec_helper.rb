@@ -1,4 +1,6 @@
 require 'use_cases/save_book'
+require 'use_cases/view_books'
+
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
