@@ -2,7 +2,7 @@
 
 describe ViewBooks do
   let(:book_gateway) { BookGatewayStub.new }
-  #Stub
+  # Stub
   class BookGatewayStub
     def initialize
       @books = []
