@@ -3,7 +3,7 @@
 describe 'read book' do
   let(:book_gateway) { InMemoryGateway.new }
   let(:view_books) { ViewBooks.new(book_gateway: book_gateway) }
-  let(:save_book) { SaveBook.new(book_gateway: book_gateway)}
+  let(:save_book) { SaveBook.new(book_gateway: book_gateway) }
   # Fake
   class InMemoryGateway
     def initialize
@@ -27,7 +27,7 @@ describe 'read book' do
     end
 
     it 'book gateway returns a book when a book is saved' do
-      book_details = { title: 'To Kill A Mockingbird',  author: 'Harper Lee' }
+      book_details = { title: 'To Kill A Mockingbird', author: 'Harper Lee' }
       save_book.execute(book_details)
       books_read = book_gateway.all.first
       expect(books_read).to eq(book_details)
@@ -43,7 +43,7 @@ describe 'read book' do
 
     it 'book gateway returns a book when a book is saved' do
       book1 = { title: 'To Kill A Mockingbird', author: 'Harper Lee' }
-      book2 = { title: 'Mockingbird', author: 'Lee'}
+      book2 = { title: 'Mockingbird', author: 'Lee' }
 
       save_book.execute(book1)
       save_book.execute(book2)
