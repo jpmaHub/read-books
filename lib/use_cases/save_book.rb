@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SaveBook
   def initialize(book_gateway:)
     @book_gateway = book_gateway
